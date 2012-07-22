@@ -2,7 +2,7 @@
 
 Introduction: Tap the barButtonItem and a popOver will show up which you can add subViews on.
 
-Unfinished yet! ("Right side" style only, currently. But you can use now if you just need this style.)
+Unfinished yet! ("Right side" style only, currently. But you can use it now if you just need this style.)
 
 ##How to:
 
