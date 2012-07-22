@@ -50,7 +50,7 @@
         //[view.layer setBorderWidth:2];
         //DLog(@"%@", NSStringFromCGRect(view.frame));
         
-        CGPoint point = CGPointMake(view.frame.size.width / 2, CGRectGetMaxY(view.frame) - 7);
+        CGPoint point = CGPointMake(floorf(view.frame.size.width / 2), floorf(CGRectGetMaxY(view.frame) - 7));
         
         UIWindow *appWindow = [[UIApplication sharedApplication] keyWindow];
         
