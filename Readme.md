@@ -21,5 +21,5 @@ Then you can add anything you want on the popOverView.(eg. two buttons)
 
 ###ScreenShot
 
-![image](http://)
+![image](https://github.com/ultragtx/GSPopoverBarButtonItem/blob/master/ScreenShot/1.png?raw=true)
 
