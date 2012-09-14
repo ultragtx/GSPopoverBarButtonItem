@@ -29,6 +29,7 @@
     self = [super initWithFrame:CGRectZero];
     if (self) {
         [self setBackgroundColor:[UIColor clearColor]];
+        //[self setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
         
         self.invisibleButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_invisibleButton setFrame:CGRectZero];
@@ -85,11 +86,23 @@
 - (void)didMoveToSuperview {
     UIView *view = self.superview;
     
-    [self setFrame:view.frame];
-    [_invisibleButton setFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height)];
-    
-    CGRect backgroundFrame = [self backgrounFrameWithPoint:_point bounds:_popOverView.bounds];
-    [_popOverView setFrame:backgroundFrame];
+    if (view != nil) {
+        //NSLog(@"1 %@", NSStringFromCGAffineTransform(view.transform));
+        
+        if (CGAffineTransformEqualToTransform(view.transform, CGAffineTransformMake(0, 1, -1, 0, 0, 0)) ||
+            CGAffineTransformEqualToTransform(view.transform, CGAffineTransformMake(0, -1, 1, 0, 0, 0))) {
+             // landscape
+            [self setFrame:CGRectMake(view.frame.origin.x, view.frame.origin.y, view.frame.size.height, view.frame.size.width)];
+        }
+        else {
+            [self setFrame:view.frame];
+        }
+        
+        [_invisibleButton setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+        
+        CGRect backgroundFrame = [self backgrounFrameWithPoint:_point bounds:_popOverView.bounds];
+        [_popOverView setFrame:backgroundFrame];
+    }
 }
 
 #pragma mark - Button Event

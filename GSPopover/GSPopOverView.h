@@ -14,7 +14,7 @@
 
 @property (assign, nonatomic) CGPoint point;
 
-@property (weak, nonatomic) id<GSPopOverViewDelegate> delegate;
+@property (unsafe_unretained, nonatomic) id<GSPopOverViewDelegate> delegate;
 
 //- (id)initAtPoint:(CGPoint)point backgroundBounds:(CGRect)bounds;
 

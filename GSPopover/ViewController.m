@@ -66,7 +66,7 @@
 {
     [super viewDidLoad];
     
-    self.popOverBarButtonItem = [[GSPopOverBarButtonItem alloc] initWithTitle:@"PopOver" style:UIBarButtonItemStyleBordered popOverBounds:CGRectMake(0, 0, 200, 80)];
+    self.popOverBarButtonItem = [[GSPopOverBarButtonItem alloc] initWithTitle:@"PopOver" style:UIBarButtonItemStyleBordered popOverBounds:CGRectMake(0, 0, 200, 80) baseView:self.navigationController.view];
     
     [self.navigationItem setRightBarButtonItem:_popOverBarButtonItem];
     
@@ -103,7 +103,11 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [_popOverBarButtonItem hidePopOver];
 }
 
 @end

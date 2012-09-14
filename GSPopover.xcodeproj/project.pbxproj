@@ -299,6 +299,7 @@
 				C1A5967E15BAF685009B927D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

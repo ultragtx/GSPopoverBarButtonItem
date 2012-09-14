@@ -13,8 +13,9 @@
 
 @property (strong, nonatomic) UIView *popOverView;
 @property (readonly, nonatomic) BOOL popOverShowUp;
+@property (unsafe_unretained, nonatomic) UIView *baseView;
 
-- (id)initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style popOverBounds:(CGRect)bounds;
+- (id)initWithTitle:(NSString *)title style:(UIBarButtonItemStyle)style popOverBounds:(CGRect)bounds baseView:(UIView *)baseView;
 
 - (void)hidePopOver;
 
