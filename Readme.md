@@ -8,7 +8,7 @@ Unfinished yet! ("Right side" style only, currently. But you can use it now if y
 
 ###Init
 
-	GSPopOverBarButtonItem *popOverBarButtonItem = [[GSPopOverBarButtonItem alloc] initWithTitle:@"PopOver" style:UIBarButtonItemStyleBordered popOverBounds:CGRectMake(0, 0, 200, 80)];
+	GSPopOverBarButtonItem *popOverBarButtonItem = [[GSPopOverBarButtonItem alloc] initWithTitle:@"PopOver" style:UIBarButtonItemStyleBordered popOverBounds:CGRectMake(0, 0, 200, 80) baseView:self.navigationController.view];
 	
 	[self.navigationItem setRightBarButtonItem:_popOverBarButtonItem];
 
